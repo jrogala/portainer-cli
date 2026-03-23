@@ -18,7 +18,7 @@ func Init() {
 	viper.SetEnvPrefix("PORTAINER")
 	viper.AutomaticEnv()
 
-	viper.SetDefault("url", "https://192.168.1.69:9443")
+	viper.SetDefault("url", "")
 	viper.SetDefault("endpoint_id", 2)
 
 	_ = viper.ReadInConfig()
