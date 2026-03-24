@@ -37,27 +37,21 @@ portainer login -u admin -p password
 
 ```bash
 $ portainer ps
-ID            NAME        IMAGE            STATE    STATUS
-abcd12345678  nginx       nginx:latest     running  Up 2 days
-efgh56789012  postgres    postgres:15      running  Up 5 hours
-
-$ portainer restart nginx
-Restarted nginx
+ID            NAME           IMAGE                                STATE    STATUS
+9947ef62a516  vikunja        vikunja/vikunja:latest               running  Up 7 days
+42a4c3b77f4b  jellyfin       jellyfin/jellyfin                    running  Up 5 days (healthy)
+cc38151f9231  homeassistant  homeassistant/home-assistant:stable  running  Up 5 days
+a7ae788e6885  portainer      portainer/portainer-ce:latest        running  Up 7 months
 
 $ portainer stacks
-ID  NAME          STATUS
-1   monitoring    active
-2   media-stack   active
+ID  NAME              STATUS
+1   homeassistant     active
+2   factorio          active
+22  jellyfin          active
+25  vikunja           active
 
-$ portainer inspect nginx
-Name:     nginx
-ID:       abcd12345678
-Image:    nginx:latest
-State:    running
-Running:  true
-Started:  2026-03-22T10:00:00Z
-Restart:  always
-Network:  bridge (172.17.0.2)
+$ portainer restart jellyfin
+Restarted jellyfin
 ```
 
 ## JSON Output
