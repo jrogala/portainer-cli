@@ -2,6 +2,14 @@
 
 CLI for Docker container management via Portainer API.
 
+## Install
+
+Download a binary from the [latest release](https://github.com/jrogala/portainer-cli/releases/latest), or install with Go:
+
+```bash
+go install github.com/jrogala/portainer-cli@latest
+```
+
 ## Setup
 
 Set `PORTAINER_URL` env var or use config file, then authenticate:
