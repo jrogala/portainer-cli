@@ -36,18 +36,28 @@ portainer login -u admin -p password
 ## Examples
 
 ```bash
-# Login and list running containers
-portainer login -u admin -p password
-portainer ps
+$ portainer ps
+ID          NAME        IMAGE            STATE    STATUS
+abcd1234    nginx       nginx:latest     running  Up 2 days
+efgh5678    postgres    postgres:15      running  Up 5 hours
+ijkl9012    backup      backup:1.0       exited   Exited (0) 3h ago
 
-# Restart a container by name
-portainer restart nginx-proxy
+$ portainer restart nginx
+Restarted nginx
 
-# View logs for a container
-portainer logs --tail 100 my-app
+$ portainer logs --tail 3 nginx
+[nginx] 10:15:32 "GET / HTTP/1.1" 200
+[nginx] 10:16:15 "GET /api HTTP/1.1" 200
+[nginx] 10:17:01 "POST /api HTTP/1.1" 201
 
-# Inspect a container's full config
-portainer inspect my-app
+$ portainer inspect nginx
+Name:     nginx
+ID:       abcd1234
+Image:    nginx:latest
+State:    running
+Started:  2026-03-22T10:00:00Z
+Restart:  always
+Network:  bridge (172.17.0.2)
 ```
 
 ## JSON Output
