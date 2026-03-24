@@ -37,24 +37,24 @@ portainer login -u admin -p password
 
 ```bash
 $ portainer ps
-ID          NAME        IMAGE            STATE    STATUS
-abcd1234    nginx       nginx:latest     running  Up 2 days
-efgh5678    postgres    postgres:15      running  Up 5 hours
-ijkl9012    backup      backup:1.0       exited   Exited (0) 3h ago
+ID            NAME        IMAGE            STATE    STATUS
+abcd12345678  nginx       nginx:latest     running  Up 2 days
+efgh56789012  postgres    postgres:15      running  Up 5 hours
 
 $ portainer restart nginx
 Restarted nginx
 
-$ portainer logs --tail 3 nginx
-[nginx] 10:15:32 "GET / HTTP/1.1" 200
-[nginx] 10:16:15 "GET /api HTTP/1.1" 200
-[nginx] 10:17:01 "POST /api HTTP/1.1" 201
+$ portainer stacks
+ID  NAME          STATUS
+1   monitoring    active
+2   media-stack   active
 
 $ portainer inspect nginx
 Name:     nginx
-ID:       abcd1234
+ID:       abcd12345678
 Image:    nginx:latest
 State:    running
+Running:  true
 Started:  2026-03-22T10:00:00Z
 Restart:  always
 Network:  bridge (172.17.0.2)
